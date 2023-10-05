@@ -1,5 +1,6 @@
-import Header from "@components/Header";
 import { ReactNode } from "react";
+import Footer from "@components/Footer";
+import Header from "@components/Header";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
     return (
@@ -7,6 +8,8 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
             <Header />
 
             <main>{children}</main>
+
+            <Footer />
         </>
     );
 };
