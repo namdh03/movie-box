@@ -1,12 +1,31 @@
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import { Container, Typography } from "@mui/material";
+import Banner from "@components/Banner";
+import MovieList from "@components/MovieList";
+import * as St from "./Home.styled";
 
 export default function Home() {
     return (
-        <Stack spacing={2} direction="row">
-            <Button variant="text">Text</Button>
-            <Button variant="contained">Contained</Button>
-            <Button variant="outlined">Outlined</Button>
-        </Stack>
+        <>
+            <Banner />
+
+            <St.MovieSection component="section">
+                <Container disableGutters>
+                    <St.MovieNavbar size="large" variant="text">
+                        <St.MovieNavbarItem variant="contained">
+                            All
+                        </St.MovieNavbarItem>
+                        <St.MovieNavbarItem>Movies</St.MovieNavbarItem>
+                        <St.MovieNavbarItem>TV Shows</St.MovieNavbarItem>
+                    </St.MovieNavbar>
+
+                    <St.MovieLabelWrapper variant="h2">
+                        <Typography>All</Typography>
+                        <Typography>(120)</Typography>
+                    </St.MovieLabelWrapper>
+                </Container>
+
+                <MovieList />
+            </St.MovieSection>
+        </>
     );
 }

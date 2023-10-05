@@ -20,6 +20,7 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
 
+        /* Configure import aliases in Vite, TypeScript */
         "baseUrl": ".",
         "paths": {
             "@assets/*": ["src/assets/*"],

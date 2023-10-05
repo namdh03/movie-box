@@ -1,15 +1,20 @@
 import { ReactNode } from "react";
-import Footer from "@components/Footer";
 import Header from "@components/Header";
+import theme from "@themes/index";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
     return (
         <>
             <Header />
 
-            <main>{children}</main>
-
-            <Footer />
+            <main
+                style={{
+                    height: "2000px",
+                    background: theme.palette.background.main,
+                }}
+            >
+                {children}
+            </main>
         </>
     );
 };

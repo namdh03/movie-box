@@ -1,20 +1,103 @@
-import { createTheme } from "@mui/material/styles";
+import { PaletteColorOptions, createTheme } from "@mui/material/styles";
+
+declare module "@mui/material/styles" {
+    // allow configuration using `createTheme`
+    interface PaletteOptions {
+        neutralGrey?: PaletteColorOptions;
+        neutralBlack?: PaletteColorOptions;
+    }
+
+    interface Palette {
+        neutralGrey?: PaletteColor;
+        neutralBlack?: PaletteColor;
+    }
+
+    interface PaletteColor {
+        23?: string;
+        25?: string;
+        21?: string;
+        19?: string;
+        15?: string;
+        13?: string;
+        9?: string;
+        7?: string;
+        6?: string;
+        5?: string;
+        2?: string;
+        1?: string;
+    }
+
+    interface SimplePaletteColorOptions {
+        23?: string;
+        25?: string;
+        21?: string;
+        19?: string;
+        15?: string;
+        13?: string;
+        9?: string;
+        7?: string;
+        6?: string;
+        5?: string;
+        2?: string;
+        1?: string;
+    }
+
+    interface TypeBackground {
+        main?: string;
+        header?: string;
+        card?: string;
+    }
+}
 
 const theme = createTheme({
+    typography: {
+        fontFamily: "'Poppins', sans-serif",
+    },
     palette: {
         primary: {
-            light: "#757ce8",
-            main: "#3f50b5",
-            dark: "#002884",
-            contrastText: "#fff",
+            main: "#5A4AF4",
+            23: "#EBE9FE",
+            21: "#DEDBFD",
+            19: "#BEB7FB",
+            15: "#9C92F8",
+            13: "#7B6EF6",
+            9: "#483BC3",
+            7: "#120F31",
+            5: "#362C92",
+            1: "#362C92",
         },
         secondary: {
-            light: "#ff7961",
-            main: "#f44336",
-            dark: "#ba000d",
-            contrastText: "#000",
+            main: "#1EA5FC",
+            25: "#0C4265",
+        },
+        success: {
+            main: "#05CE91",
+        },
+        warning: {
+            main: "#FFAD49",
+        },
+        background: {
+            main: "#121829",
+            header: "rgba(18, 24, 41, 0.80)",
+            card: "rgba(32, 40, 62, 0.80)",
+        },
+        neutralBlack: {
+            main: "#000",
+            1: "rgba(0, 0, 0, 0.10)",
+            2: "rgba(0, 0, 0, 0.20)",
+            6: "rgba(0, 0, 0, 0.65)",
+        },
+        neutralGrey: {
+            main: "#61697F",
+            19: "#A8AEBF",
+            23: "#EBEEF5",
+            15: "#8E95A9",
+            13: "#767E94",
+            9: "#475069",
+            5: "#323B54",
         },
     },
 });
 
+export { default as globalStyles } from "./globalStyles";
 export default theme;

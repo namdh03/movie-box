@@ -1,4 +1,4 @@
-import configs from "@/configs";
+import configs from "@configs/index";
 import MainLayout from "@layouts/MainLayout";
 import Home from "@pages/Home";
 
