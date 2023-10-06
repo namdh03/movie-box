@@ -3,6 +3,7 @@ import theme from "@themes/index";
 
 export const MovieSection = styled(Box)`
     padding: 80px 0 160px;
+    background: ${theme.palette.background.main};
 `;
 
 export const MovieNavbar = styled(ButtonGroup)`

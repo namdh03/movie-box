@@ -14,11 +14,11 @@ const nav: INav[] = [
         label: <NavLink to={configs.routes.movie}>Movies</NavLink>,
         url: configs.routes.movie,
     },
-    {
-        id: 2,
-        label: <NavLink to={configs.routes.tvShows}>TV Shows</NavLink>,
-        url: configs.routes.tvShows,
-    },
+    // {
+    //     id: 2,
+    //     label: <NavLink to={configs.routes.contact}>Contact</NavLink>,
+    //     url: configs.routes.contact,
+    // },
     {
         id: 3,
         label: (

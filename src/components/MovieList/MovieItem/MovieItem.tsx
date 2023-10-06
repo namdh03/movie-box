@@ -1,56 +1,35 @@
-import { AiOutlineStar } from "react-icons/ai";
-import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import theme from "@themes/index";
 import { Link } from "react-router-dom";
 import configs from "@configs/index";
+import { IMovie } from "@/components/MovieList/MovieList.dummy";
+import Rating from "@components/Rating";
 
-const MovieItem = ({ src, title }: { src: string; title: string }) => {
+const MovieItem = ({ movie }: { movie: IMovie }) => {
     return (
-        <Link to={`${configs.routes.movie}/$`}>
+        <Link to={`${configs.routes.movie}/${movie.id}`}>
             <Card
                 sx={{
                     position: "relative",
-                    width: "282px",
-                    height: "480px",
+                    width: "270px",
+                    height: "100%",
                     padding: "8px",
                     borderRadius: "12px",
                     bgcolor: theme.palette.background.card,
                     backdropFilter: "blur(40px)",
                 }}
             >
-                <Box
-                    sx={{
-                        position: "absolute",
-                        top: 18,
-                        left: 16,
-                        display: "flex",
-                        alignItems: "center",
-                        columnGap: "4px",
-                        padding: "4px 8px",
-                        borderRadius: "8px",
-                        background: theme.palette.neutralBlack?.[6],
-                        backdropFilter: "blur(4px)",
-                    }}
-                >
-                    <AiOutlineStar
-                        color={theme.palette.warning.main}
-                        size={16}
-                    />
-                    <Typography
-                        sx={{
-                            color: theme.palette.warning.main,
-                            fontSize: "1.6rem",
-                            fontWeight: 400,
-                            lineHeight: 1.5,
-                        }}
-                    >
-                        6.8
-                    </Typography>
-                </Box>
+                <Rating
+                    position="absolute"
+                    top="18px"
+                    left="16px"
+                    rating={movie.rating}
+                    bgColor={theme.palette.neutralBlack?.[6]}
+                />
                 <CardMedia
                     sx={{ height: "400px", borderRadius: "8px" }}
-                    image={src}
-                    title={title}
+                    image={movie.poster}
+                    title={movie.title}
                 />
                 <CardContent
                     sx={{
@@ -71,7 +50,7 @@ const MovieItem = ({ src, title }: { src: string; title: string }) => {
                             letterSpacing: "0.32px",
                         }}
                     >
-                        {title}
+                        {movie.title}
                     </Typography>
                 </CardContent>
             </Card>

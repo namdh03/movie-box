@@ -1,3 +1,5 @@
+// MdOutlineDarkMode
+import { MdOutlineLightMode } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Avatar, Box, Container, Toolbar } from "@mui/material";
 import logo from "@assets/svgs/logo.svg";
@@ -8,7 +10,7 @@ import nav from "./Header.nav";
 const Header = () => {
     return (
         <St.Header position="fixed">
-            <Container disableGutters>
+            <Container maxWidth="lg">
                 <Toolbar>
                     <Link to={configs.routes.home}>
                         <Avatar alt="MaileHereko" src={logo} />
@@ -18,6 +20,8 @@ const Header = () => {
                         {nav.map((page) => (
                             <Box key={page.id}>{page.label}</Box>
                         ))}
+
+                        <MdOutlineLightMode size={24} cursor="pointer" />
                     </St.Navbar>
                 </Toolbar>
             </Container>

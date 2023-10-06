@@ -2,7 +2,7 @@ const routes = {
     home: "/",
     movie: "/movie",
     movieId: "/movie/:movieId",
-    tvShows: "/tv-shows",
+    contact: "/contact",
     suggest: "/suggest",
 };
 

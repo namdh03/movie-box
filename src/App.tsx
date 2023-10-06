@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
 import { publicRoutes } from "@/routes/routes";
+import { useScrollToTop } from "./hooks";
 
 type TLayout =
     | React.ExoticComponent<{
@@ -9,6 +10,8 @@ type TLayout =
     | (({ children }: { children: React.ReactNode }) => JSX.Element);
 
 const App = () => {
+    useScrollToTop();
+
     return (
         <Routes>
             {publicRoutes.map((route) => {

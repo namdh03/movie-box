@@ -4,17 +4,23 @@ declare module "@mui/material/styles" {
     // allow configuration using `createTheme`
     interface PaletteOptions {
         neutralGrey?: PaletteColorOptions;
+        neutralWhite?: PaletteColorOptions;
         neutralBlack?: PaletteColorOptions;
+        tertiary?: PaletteColorOptions;
     }
 
     interface Palette {
         neutralGrey?: PaletteColor;
+        neutralWhite?: PaletteColor;
         neutralBlack?: PaletteColor;
+        tertiary?: PaletteColor;
     }
 
     interface PaletteColor {
-        23?: string;
+        47?: string;
+        35?: string;
         25?: string;
+        23?: string;
         21?: string;
         19?: string;
         15?: string;
@@ -28,8 +34,10 @@ declare module "@mui/material/styles" {
     }
 
     interface SimplePaletteColorOptions {
-        23?: string;
+        47?: string;
+        35?: string;
         25?: string;
+        23?: string;
         21?: string;
         19?: string;
         15?: string;
@@ -70,8 +78,13 @@ const theme = createTheme({
             main: "#1EA5FC",
             25: "#0C4265",
         },
+        tertiary: {
+            main: "#B66DFF",
+            35: "#492C66",
+        },
         success: {
             main: "#05CE91",
+            47: "#02523A",
         },
         warning: {
             main: "#FFAD49",
@@ -80,6 +93,9 @@ const theme = createTheme({
             main: "#121829",
             header: "rgba(18, 24, 41, 0.80)",
             card: "rgba(32, 40, 62, 0.80)",
+        },
+        neutralWhite: {
+            main: "#fff",
         },
         neutralBlack: {
             main: "#000",

@@ -9,7 +9,7 @@ export default function Home() {
             <Banner />
 
             <St.MovieSection component="section">
-                <Container disableGutters>
+                <Container maxWidth="lg">
                     <St.MovieNavbar size="large" variant="text">
                         <St.MovieNavbarItem variant="contained">
                             All
@@ -22,9 +22,9 @@ export default function Home() {
                         <Typography>All</Typography>
                         <Typography>(120)</Typography>
                     </St.MovieLabelWrapper>
-                </Container>
 
-                <MovieList />
+                    <MovieList />
+                </Container>
             </St.MovieSection>
         </>
     );
