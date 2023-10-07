@@ -90,6 +90,8 @@ const theme = createTheme({
             main: "#FFAD49",
         },
         background: {
+            default: "#fff",
+            paper: "#fff",
             main: "#121829",
             header: "rgba(18, 24, 41, 0.80)",
             card: "rgba(32, 40, 62, 0.80)",
