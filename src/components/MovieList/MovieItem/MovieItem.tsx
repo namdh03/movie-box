@@ -2,12 +2,18 @@ import { Card, CardContent, CardMedia, Typography } from "@mui/material";
 import theme from "@themes/index";
 import { Link } from "react-router-dom";
 import configs from "@configs/index";
-import { IMovie } from "@/components/MovieList/MovieList.dummy";
+import { IMovie, ITVShow } from "@/components/MovieList/MovieList.dummy";
 import Rating from "@components/Rating";
 
-const MovieItem = ({ movie }: { movie: IMovie }) => {
+const MovieItem = ({ movie }: { movie: IMovie | ITVShow }) => {
+    let url = `${configs.routes.tvShow}/${movie.id}`;
+
+    if (movie.type === "Movies") {
+        url = `${configs.routes.movie}/${movie.id}`;
+    }
+
     return (
-        <Link to={`${configs.routes.movie}/${movie.id}`}>
+        <Link to={url}>
             <Card
                 sx={{
                     position: "relative",

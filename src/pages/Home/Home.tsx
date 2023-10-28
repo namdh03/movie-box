@@ -1,6 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import Banner from "@components/Banner";
 import MovieList from "@components/MovieList";
+import dummy from "@components/MovieList/MovieList.dummy";
 import * as St from "./Home.styled";
 
 export default function Home() {
@@ -23,7 +24,7 @@ export default function Home() {
                         <Typography>(120)</Typography>
                     </St.MovieLabelWrapper>
 
-                    <MovieList />
+                    <MovieList movies={dummy.movies} />
                 </Container>
             </St.MovieSection>
         </>

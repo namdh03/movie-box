@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import {
     Box,
     Breadcrumbs,
@@ -9,14 +9,19 @@ import {
     Typography,
 } from "@mui/material";
 import Rating from "@components/Rating";
-import dummy from "@components/MovieList/MovieList.dummy";
+import dummy, { IMovie, ITVShow } from "@components/MovieList/MovieList.dummy";
 import configs from "@configs/index";
 import * as St from "./MovieDetail.styled";
 import theme from "@themes/index";
 
 const MovieDetail = () => {
+    const path = useLocation();
     const { movieId } = useParams();
-    const movie = dummy.movies[Number(movieId)];
+    let movie: ITVShow | IMovie = dummy.movies[Number(movieId)];
+
+    if (path.pathname.includes("tv-show")) {
+        movie = dummy.tvShow[Number(movieId)];
+    }
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);

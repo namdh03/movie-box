@@ -1,9 +1,9 @@
 import { Grid } from "@mui/material";
 import MovieItem from "./MovieItem";
-import dummy from "./MovieList.dummy";
 import { MovieListBox, MovieListDecor } from "./MovieList.styled";
+import { IMovie, ITVShow } from "./MovieList.dummy";
 
-const MovieList = () => {
+const MovieList = ({ movies }: { movies: ITVShow[] | IMovie[] }) => {
     return (
         <MovieListBox>
             <MovieListDecor />
@@ -16,7 +16,7 @@ const MovieList = () => {
                 maxWidth="1200px"
                 justifyContent="center"
             >
-                {dummy.movies.map((film) => (
+                {movies.map((film) => (
                     <Grid key={film.id} item>
                         <MovieItem movie={film} />
                     </Grid>

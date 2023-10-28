@@ -1,14 +1,14 @@
 import { Container, Typography } from "@mui/material";
-import MovieList from "@components/MovieList";
 import Decor from "@components/Decor";
+import MovieList from "@components/MovieList";
 import Search from "@components/Search";
 import theme from "@themes/index";
+import { TVShowSection } from "./TVShow.styled";
 import dummy from "@components/MovieList/MovieList.dummy";
-import * as St from "./Movie.styled";
 
-const Movie = () => {
+const TVShow = () => {
     return (
-        <St.MovieBannerSection component="section">
+        <TVShowSection>
             <Container maxWidth="lg">
                 <Decor>
                     <>
@@ -33,7 +33,7 @@ const Movie = () => {
                             }}
                             variant="h1"
                         >
-                            Movies
+                            TV Shows
                         </Typography>
 
                         <Search />
@@ -54,10 +54,10 @@ const Movie = () => {
                     </>
                 </Decor>
 
-                <MovieList movies={dummy.movies} />
+                <MovieList movies={dummy.tvShow} />
             </Container>
-        </St.MovieBannerSection>
+        </TVShowSection>
     );
 };
 
-export default Movie;
+export default TVShow;

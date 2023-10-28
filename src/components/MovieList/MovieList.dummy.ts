@@ -16,6 +16,12 @@ import infinityWarImg from "@assets/images/infinity-war.jpg";
 import infinityWarBanner from "@assets/images/infinity-war-banner.jpg";
 import lostInSpaceImg from "@assets/images/lost-in-space.jpg";
 import lostInSpaceBanner from "@assets/images/lost-in-space-banner.jpg";
+import lokiImg from "@assets/images/loki.jpg";
+import lokiBanner from "@assets/images/loki-banner.jpg";
+import theGiftedImg from "@assets/images/the-gifted.jpg";
+import theGiftedBanner from "@assets/images/the-gifted-banner.jpg";
+import wednesdayImg from "@assets/images/wednesday.jpg";
+import wednesdayBanner from "@assets/images/wednesday-banner.jpg";
 
 export interface IMovie {
     id: number;
@@ -32,7 +38,7 @@ export interface IMovie {
     genres: string[];
 }
 
-interface ITVShow {
+export interface ITVShow {
     id: number;
     rating: number;
     title: string;
@@ -49,9 +55,11 @@ interface ITVShow {
     no_of_episodes: number;
     episode_run_time: string;
     genres: string[];
+    release_date: string;
+    run_time: string;
 }
 
-interface IDummy {
+export interface IDummy {
     movies: IMovie[];
     tvShow: ITVShow[];
 }
@@ -198,6 +206,71 @@ const dummy: IDummy = {
             no_of_episodes: 20,
             episode_run_time: "56",
             genres: ["Action", "Adventure", "Sci-Fi", "Fantasy", "Drama"],
+            release_date: "2018-04-26",
+            run_time: "149",
+        },
+        {
+            id: 1,
+            rating: 5.1,
+            title: "Loki",
+            poster: lokiImg,
+            thumbnail: lokiBanner,
+            trailer:
+                "https://www.youtube.com/embed/fzmM0AB60QQ?si=xV1gSuFUa7CuYV1F",
+            type: "TV Show",
+            status: "Returning Series",
+            quote: "Have You Seen Our Robot?",
+            plot: "The mission to save Scarecrow takes an unexpected turn, throwing the Resolute into chaos. Judy hatches a plan to get a ship to Alpha Centauri.",
+            first_air_date: "2018-04-13",
+            last_air_date: "2019-04-24",
+            no_of_seasons: 2,
+            no_of_episodes: 20,
+            episode_run_time: "56",
+            genres: ["Action", "Adventure", "Sci-Fi", "Fantasy", "Drama"],
+            release_date: "2018-04-26",
+            run_time: "149",
+        },
+        {
+            id: 2,
+            rating: 7.1,
+            title: "The Gifted",
+            poster: theGiftedImg,
+            thumbnail: theGiftedBanner,
+            trailer:
+                "https://www.youtube.com/embed/fzmM0AB60QQ?si=xV1gSuFUa7CuYV1F",
+            type: "TV Show",
+            status: "Returning Series",
+            quote: "Have You Seen Our Robot?",
+            plot: "The mission to save Scarecrow takes an unexpected turn, throwing the Resolute into chaos. Judy hatches a plan to get a ship to Alpha Centauri.",
+            first_air_date: "2018-04-13",
+            last_air_date: "2019-04-24",
+            no_of_seasons: 2,
+            no_of_episodes: 20,
+            episode_run_time: "56",
+            genres: ["Action", "Adventure", "Sci-Fi", "Fantasy", "Drama"],
+            release_date: "2018-04-26",
+            run_time: "149",
+        },
+        {
+            id: 3,
+            rating: 8.1,
+            title: "Wednesday",
+            poster: wednesdayImg,
+            thumbnail: wednesdayBanner,
+            trailer:
+                "https://www.youtube.com/embed/fzmM0AB60QQ?si=xV1gSuFUa7CuYV1F",
+            type: "TV Show",
+            status: "Returning Series",
+            quote: "Have You Seen Our Robot?",
+            plot: "The mission to save Scarecrow takes an unexpected turn, throwing the Resolute into chaos. Judy hatches a plan to get a ship to Alpha Centauri.",
+            first_air_date: "2018-04-13",
+            last_air_date: "2019-04-24",
+            no_of_seasons: 2,
+            no_of_episodes: 20,
+            episode_run_time: "56",
+            genres: ["Action", "Adventure", "Sci-Fi", "Fantasy", "Drama"],
+            release_date: "2018-04-26",
+            run_time: "149",
         },
     ],
 };
